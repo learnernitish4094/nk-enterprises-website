@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NK Enterprises — Trusted Security & Housekeeping Services</title>
+    <meta name="description"
+        content="NK Enterprises - Trusted Security & Housekeeping Services. Security guards, bouncers, gunman, manpower and housekeeping in Faridabad, Haryana." />
+    <style>
+        :root {
+            --blue: #0b6ff0;
+            --dark: #0b2340;
+            --muted: #6b7280;
+            --radius: 12px;
+            --max-width: 1100px;
+            --glass: rgba(11, 111, 240, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color: #111;
+            background: #f7fbff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45;
+        }
+
+        header {
+            background: linear-gradient(180deg, rgba(11, 111, 240, 0.06), transparent 60%);
+            border-bottom: 1px solid rgba(11, 111, 240, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            backdrop-filter: blur(4px);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 18px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .brand img {
+            height: 56px;
+            width: 56px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: white;
+            padding: 6px;
+            box-shadow: 0 6px 18px rgba(11, 111, 240, 0.08);
+        }
+
+        .brand h1 {
+            font-size: 18px;
+            letter-spacing: 0.4px;
+        }
+
+        .brand p {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: -4px;
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .navlinks a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            padding: 8px 10px;
+            border-radius: 8px;
+        }
+
+        .navlinks a:hover {
+            background: rgba(11, 111, 240, 0.06);
+            color: var(--blue);
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 28px;
+            align-items: center;
+            padding: 42px 0 24px;
+        }
+
+        .hero-left h2 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .cta {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+            box-shadow: 0 8px 20px rgba(11, 111, 240, 0.18);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            background: transparent;
+            padding: 10px 14px;
+        }
+
+        .hero-right {
+            background: white;
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(13, 40, 77, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .hero-right img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Sections */
+        section {
+            padding: 36px 0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: var(--dark);
+            margin-bottom: 14px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(13, 40, 77, 0.04);
+        }
+
+        .service-ico {
+            height: 56px;
+            width: 56px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: var(--glass);
+            font-weight: 800;
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        /* About */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .about .about-photo {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(13, 40, 77, 0.05);
+        }
+
+        .about .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 260px;
+        }
+
+        /* Services list */
+        .services-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .services-list li {
+            padding: 8px 0;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        /* Contact */
+        .contact-card {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            box-shadow: 0 10px 24px rgba(13, 40, 77, 0.05);
+        }
+
+        .contact-card .info {
+            flex: 1;
+        }
+
+        .contact-card .info p {
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            min-width: 170px;
+        }
+
+        .contact-actions a {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .call {
+            background: linear-gradient(180deg, var(--blue), #0862d6);
+            color: white;
+        }
+
+        .wa {
+            background: #25D366;
+            color: white;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px 0;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* Floating quick buttons (call + WhatsApp) */
+        .quick {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 40;
+        }
+
+        .quick a {
+            display: inline-grid;
+            place-items: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(11, 111, 240, 0.12);
+        }
+
+        .quick .q-call {
+            background: linear-gradient(180deg, var(--blue), #0862d6);
+        }
+
+        .quick .q-wa {
+            background: #25D366;
+        }
+
+        /* Responsive */
+        @media (max-width:960px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:600px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navlinks {
+                display: none;
+            }
+
+            .brand h1 {
+                font-size: 16px;
+            }
+
+            .brand img {
+                height: 46px;
+                width: 46px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a class="brand" href="#home">
+                    <img src="assetslogo.png" alt="NK Enterprises logo">
+                    <div>
+                        <h1>NK Enterprises</h1>
+                        <p>Trusted Security & Housekeeping Services</p>
+                    </div>
+                </a>
+
+                <div class="navlinks" aria-hidden="false">
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="home">
+        <section class="hero">
+            <div class="hero-left">
+                <h2>NK Enterprises — Trusted Security & Housekeeping Services</h2>
+                <p class="tag">Professional security guards, bouncers, gunman, manpower and housekeeping — serving
+                    Faridabad, Haryana & Delhi NCR with 24×7 reliability.</p>
+
+                <div>
+                    <strong>Services:</strong>
+                    <ul class="services-list">
+                        <li>Security Guards For Everything</li>
+                        <li>Housekeeping</li>
+                        <li>Man Power</li>
+                        <li>Gunman</li>
+                        <li>Bouncers</li>
+                    </ul>
+                </div>
+
+                <div class="cta">
+                    <!-- click-to-call -->
+                    <a class="btn btn-primary" href="tel:+919311830298">Call Now • +91 93118 30298</a>
+                    <!-- WhatsApp -->
+                    <a class="btn btn-outline" href="https://wa.me/919311830298" target="_blank" rel="noopener">Chat on
+                        WhatsApp</a>
+                </div>
+
+                <div style="margin-top:16px; color:var(--muted); font-size:14px;">
+                    <strong>Office:</strong> Harkesh Colony, Tilpat, Faridabad - 121003, Haryana
+                </div>
+            </div>
+
+            <aside class="hero-right" aria-hidden="false">
+                <img src="guard1.jpeg" alt="Security guard on duty">
+                <div style="text-align:center;">
+                    <div style="font-weight:800; color:var(--dark);">Professional Guards • 24×7 Coverage</div>
+                    <div style="color:var(--muted); font-size:13px; margin-top:6px;">Reliable, trained & uniformed
+                        security staff for residential, commercial and events.</div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="section-title">About NK Enterprises</div>
+            <div class="about">
+                <div>
+                    <p style="color:var(--muted); margin-bottom:12px;">
+                        Started in 2021, NK Enterprises provides trusted security and housekeeping services across
+                        Faridabad, Haryana and Delhi NCR. What started with a few trained guards has grown into a team
+                        committed to keeping people and property safe.
+                    </p>
+
+                    <div style="display:grid; gap:10px;">
+                        <div class="card">
+                            <strong>Why choose us?</strong>
+                            <p style="color:var(--muted); margin-top:8px;">
+                                Trained staff • Verified background • Uniformed personnel • Timely deployment • 24×7
+                                support
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <strong>Our Promise</strong>
+                            <p style="color:var(--muted); margin-top:8px;">
+                                Professionalism, attention to detail and quick response — that’s our promise to every
+                                client.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-photo">
+                    <img src="guard2.jpeg" alt="NK Enterprises staff uniform">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services">
+            <div class="section-title">Our Services</div>
+
+            <div class="card-grid" style="margin-top:12px;">
+                <div class="card">
+                    <div class="service-ico">G</div>
+                    <h3>Security Guards For Everything</h3>
+                    <p style="color:var(--muted); margin-top:8px;">Residential complexes, commercial buildings,
+                        industrial sites — trained guards for every environment.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-ico">H</div>
+                    <h3>Housekeeping</h3>
+                    <p style="color:var(--muted); margin-top:8px;">Trained housekeeping staff for offices, societies and
+                        events. Professional cleaning, maintenance and support.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-ico">M</div>
+                    <h3>Man Power</h3>
+                    <p style="color:var(--muted); margin-top:8px;">Rapidly scalable manpower supply for short-term and
+                        long-term requirements.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-ico">B</div>
+                    <h3>Bouncers</h3>
+                    <p style="color:var(--muted); margin-top:8px;">Professional bouncers for events, clubs and private
+                        functions to ensure smooth crowd management.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-ico">G</div>
+                    <h3>Gunman</h3>
+                    <p style="color:var(--muted); margin-top:8px;">Armed security personnel available where legally
+                        permitted and requested.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-ico">C</div>
+                    <h3>Event Security</h3>
+                    <p style="color:var(--muted); margin-top:8px;">Full event security planning and deployment for VIPs,
+                        shows and corporate gatherings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="section-title">Contact Us</div>
+
+            <div class="contact-card" style="margin-top:12px;">
+                <div class="info">
+                    <h3 style="margin-bottom:6px;">NK Enterprises</h3>
+                    <div style="color:var(--muted)">Harkesh Colony, Tilpat, Faridabad - 121003, Haryana</div>
+                    <p style="color:var(--muted); margin-top:10px;">For enquiries, deployment requests or quotes — reach
+                        out directly by call or WhatsApp.</p>
+                    <p style="margin-top:12px;"><strong>Phone:</strong> +91 93118 30298</p>
+                    <p style="margin-top:6px;"><strong>WhatsApp:</strong> +91 93118 30298</p>
+                </div>
+
+                <div class="contact-actions">
+                    <a class="call" href="tel:+919311830298">Call +91 93118 30298</a>
+                    <a class="wa" href="https://wa.me/919311830298" target="_blank" rel="noopener">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © <strong>NK Enterprises</strong> — Trusted Security & Housekeeping Services • Harkesh Colony, Tilpat,
+            Faridabad • Phone: +91 93118 30298
+        </footer>
+    </main>
+
+    <!-- Floating quick actions -->
+    <div class="quick" aria-hidden="false">
+        <a class="q-wa" href="https://wa.me/919311830298" target="_blank" title="Chat on WhatsApp">WA</a>
+        <a class="q-call" href="tel:+919311830298" title="Call Now">☎</a>
+    </div>
+
+</body>
+
+</html>
